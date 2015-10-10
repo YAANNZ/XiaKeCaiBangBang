@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "XKCMainViewController.h"
+#import <BmobSDK/Bmob.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[XKCMainViewController alloc] init];
+    [self.window makeKeyAndVisible];
+    
+    [Bmob registerWithAppKey:@"b923113232d0f26eca7290467601040c"];
+    
     return YES;
 }
 

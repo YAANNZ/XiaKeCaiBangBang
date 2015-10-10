@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		8808CE551BC8FC1200C9B431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE541BC8FC1200C9B431 /* main.m */; };
 		8808CE581BC8FC1200C9B431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE571BC8FC1200C9B431 /* AppDelegate.m */; };
-		8808CE5E1BC8FC1200C9B431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8808CE5C1BC8FC1200C9B431 /* Main.storyboard */; };
 		8808CE601BC8FC1200C9B431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8808CE5F1BC8FC1200C9B431 /* Assets.xcassets */; };
 		8808CE631BC8FC1200C9B431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8808CE611BC8FC1200C9B431 /* LaunchScreen.storyboard */; };
 		8808CE6E1BC8FC1200C9B431 /* XiaKeCBBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE6D1BC8FC1200C9B431 /* XiaKeCBBTests.m */; };
 		8808CE791BC8FC1300C9B431 /* XiaKeCBBUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE781BC8FC1300C9B431 /* XiaKeCBBUITests.m */; };
+		8808CE901BC917C300C9B431 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE8D1BC917C300C9B431 /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		8808CE911BC917C300C9B431 /* XKCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE8F1BC917C300C9B431 /* XKCMainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8808CE941BC92B3A00C9B431 /* XKCMainCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808CE931BC92B3A00C9B431 /* XKCMainCellData.m */; settings = {ASSET_TAGS = (); }; };
 		C20146971196ECC6F6BF2F16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F92E551FDC1CC06983F8180 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +44,6 @@
 		8808CE541BC8FC1200C9B431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8808CE561BC8FC1200C9B431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8808CE571BC8FC1200C9B431 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8808CE5D1BC8FC1200C9B431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8808CE5F1BC8FC1200C9B431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8808CE621BC8FC1200C9B431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8808CE641BC8FC1200C9B431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +53,12 @@
 		8808CE741BC8FC1300C9B431 /* XiaKeCBBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaKeCBBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8808CE781BC8FC1300C9B431 /* XiaKeCBBUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaKeCBBUITests.m; sourceTree = "<group>"; };
 		8808CE7A1BC8FC1300C9B431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8808CE8C1BC917C300C9B431 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		8808CE8D1BC917C300C9B431 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		8808CE8E1BC917C300C9B431 /* XKCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCMainViewController.h; sourceTree = "<group>"; };
+		8808CE8F1BC917C300C9B431 /* XKCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCMainViewController.m; sourceTree = "<group>"; };
+		8808CE921BC92B3A00C9B431 /* XKCMainCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCMainCellData.h; sourceTree = "<group>"; };
+		8808CE931BC92B3A00C9B431 /* XKCMainCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCMainCellData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +120,14 @@
 		8808CE521BC8FC1200C9B431 /* XiaKeCBB */ = {
 			isa = PBXGroup;
 			children = (
+				8808CE8C1BC917C300C9B431 /* UIView+Extension.h */,
+				8808CE8D1BC917C300C9B431 /* UIView+Extension.m */,
+				8808CE8E1BC917C300C9B431 /* XKCMainViewController.h */,
+				8808CE8F1BC917C300C9B431 /* XKCMainViewController.m */,
+				8808CE921BC92B3A00C9B431 /* XKCMainCellData.h */,
+				8808CE931BC92B3A00C9B431 /* XKCMainCellData.m */,
 				8808CE561BC8FC1200C9B431 /* AppDelegate.h */,
 				8808CE571BC8FC1200C9B431 /* AppDelegate.m */,
-				8808CE5C1BC8FC1200C9B431 /* Main.storyboard */,
 				8808CE5F1BC8FC1200C9B431 /* Assets.xcassets */,
 				8808CE611BC8FC1200C9B431 /* LaunchScreen.storyboard */,
 				8808CE641BC8FC1200C9B431 /* Info.plist */,
@@ -266,7 +278,6 @@
 			files = (
 				8808CE631BC8FC1200C9B431 /* LaunchScreen.storyboard in Resources */,
 				8808CE601BC8FC1200C9B431 /* Assets.xcassets in Resources */,
-				8808CE5E1BC8FC1200C9B431 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8808CE911BC917C300C9B431 /* XKCMainViewController.m in Sources */,
+				8808CE941BC92B3A00C9B431 /* XKCMainCellData.m in Sources */,
+				8808CE901BC917C300C9B431 /* UIView+Extension.m in Sources */,
 				8808CE581BC8FC1200C9B431 /* AppDelegate.m in Sources */,
 				8808CE551BC8FC1200C9B431 /* main.m in Sources */,
 			);
@@ -361,14 +375,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8808CE5C1BC8FC1200C9B431 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8808CE5D1BC8FC1200C9B431 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8808CE611BC8FC1200C9B431 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiakecbb.XiaKeCBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -485,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiakecbb.XiaKeCBB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
