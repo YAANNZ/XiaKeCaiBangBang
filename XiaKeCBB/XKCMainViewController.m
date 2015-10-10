@@ -129,6 +129,7 @@
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"AddressBook"];
     
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        [self.numberArray removeAllObjects];
         for (BmobObject *obj in array)
         {
 //            //打印playerName
