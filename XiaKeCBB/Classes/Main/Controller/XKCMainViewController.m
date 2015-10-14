@@ -6,17 +6,10 @@
 //  Copyright © 2015年 xiakecbb. All rights reserved.
 //
 
-//设备屏幕大小
-#define MAINSCREEN_FRAME   [[UIScreen mainScreen] bounds]
-//设备屏幕宽
-#define MAINSCREEN_WIDTH  MAINSCREEN_FRAME.size.width
-//设备屏幕高
-#define MAINSCREEN_HEIGHT MAINSCREEN_FRAME.size.height
-
 #import "XKCMainViewController.h"
-#import "UIView+Extension.h"
 #import <BmobSDK/Bmob.h>
 #import "XKCMainCellData.h"
+#import "XKCLoginViewController.h"
 
 @interface XKCMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +24,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = XKCBaseColor;
     
     UILabel *lable = [[UILabel alloc] init];
     lable.width = 200;
@@ -124,6 +117,7 @@
 //    }];
 //}
 
+#pragma mark - 联络按钮点击事件
 - (void)getAddressBook
 {
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"AddressBook"];
@@ -149,6 +143,10 @@
         [self.tableView reloadData];
         self.tableView.hidden = NO;
     }];
+    
+    XKCLoginViewController *loginVC = [[XKCLoginViewController alloc] init];
+    UINavigationController *loginNavVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:loginNavVC animated:YES completion:nil];
 }
 
 
