@@ -1,1 +1,2 @@
 pod "BmobSDK"
+pod "AFNetworking"
