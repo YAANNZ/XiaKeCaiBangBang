@@ -10,6 +10,7 @@
 #import "XKCRegisterViewController.h"
 #import "AFNetworking.h"
 #import "XKCAccountTool.h"
+#import "XKCKeychain.h"
 
 @interface XKCLoginViewController ()
 
@@ -188,6 +189,10 @@
     
     // 友盟点击统计
     
+    // 密码存入钥匙串
+    [XKCKeychain savePassWord:self.passwordTextField.text];
+    XKCLog(@"%@",[XKCKeychain readPassWord]);
+    
     [self.view endEditing:YES];
 //    [[NSUserDefaults standardUserDefaults] setObject:self.usernameTextField.text forKey:HMCUsername];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -200,24 +205,37 @@
     
     // 2.拼接请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"x_username"] = @"嘿嘿嘿";
-    params[@"x_password"] = @"128763123";
+//    params[@"x_username"] = @"嘿嘿嘿";
+//    params[@"x_password"] = @"128763123";
     
     // 3.发送一个POST请求
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params
-      success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-//          [responseObject writeToFile:<#(nonnull NSString *)#> atomically:<#(BOOL)#>];
-          // 字典转为模型
-          XKCAccount *account = [XKCAccount accountWithDict:responseObject];
-          
-          // 存储帐号信息
-          [XKCAccountTool save:account];
-          
-          // 切换到主控制器
-//          [UIApplication sharedApplication].keyWindow.rootViewController = [[HWTabBarController alloc] init];
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          NSLog(@"请求失败 - %@", error);
-      }];
+//    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params
+//      success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+////          [responseObject writeToFile:<#(nonnull NSString *)#> atomically:<#(BOOL)#>];
+//          // 字典转为模型
+//          XKCAccount *account = [XKCAccount accountWithDict:responseObject];
+//          
+//          // 存储帐号信息
+//          [XKCAccountTool save:account];
+//          
+//          // 切换到主控制器
+////          [UIApplication sharedApplication].keyWindow.rootViewController = [[HWTabBarController alloc] init];
+//      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//          NSLog(@"请求失败 - %@", error);
+//      }];
+
+    
+    params[@"cityname"] = @"北京";
+    params[@"key"] = @"080bb98453dda71d25f7269a6a5f5371";
+    [mgr GET:@"http://v.juhe.cn/weather/index" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        XKCLog(@"成功");
+        XKCLog(@"%@",responseObject);
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        XKCLog(@"失败");
+    }];
+    
+    // 存入数据库！
 }
 
 - (void)registerBtnClick:(UIButton *)registerButton
