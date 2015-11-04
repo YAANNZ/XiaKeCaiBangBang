@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XKCMainViewController : UIViewController
+#import "RNFrostedSidebar.h"
+@interface XKCMainViewController : UIViewController<RNFrostedSidebarDelegate>
 
 @end

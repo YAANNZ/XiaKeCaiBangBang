@@ -27,6 +27,8 @@
 @property (nonatomic, weak) UIButton *loginButton;
 @property (nonatomic, weak) UIButton *registerButton;
 
+
+
 @end
 
 @implementation XKCLoginViewController
@@ -36,7 +38,6 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
-    
     [self setUpViewContent]; // 布局
     
 }

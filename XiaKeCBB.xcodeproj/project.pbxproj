@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190130B41BDB8EA80092C677 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 190130B01BDB8EA80092C677 /* libEaseMobClientSDK.a */; };
 		190130B61BDB8EA80092C677 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 190130B31BDB8EA80092C677 /* EaseMob.bundle */; };
 		190130B81BDB8EE20092C677 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190130B71BDB8EE20092C677 /* MobileCoreServices.framework */; };
 		190130BA1BDB8EE90092C677 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190130B91BDB8EE90092C677 /* CFNetwork.framework */; };
@@ -44,6 +43,23 @@
 		8890C13F1BCE40A400DDC23C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C13E1BCE40A400DDC23C /* libz.tbd */; };
 		8890C1411BCE40AC00DDC23C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C1401BCE40AC00DDC23C /* libicucore.tbd */; };
 		8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */; };
+		B5B3DD1C1BE9F257009CA601 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */; };
+		B5B3DD201BE9F842009CA601 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */; };
+		B5B3DD311BE9FFE3009CA601 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD221BE9FFE3009CA601 /* burger.png */; };
+		B5B3DD321BE9FFE3009CA601 /* burger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD231BE9FFE3009CA601 /* burger@2x.png */; };
+		B5B3DD331BE9FFE3009CA601 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD241BE9FFE3009CA601 /* Default-568h@2x.png */; };
+		B5B3DD341BE9FFE3009CA601 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD251BE9FFE3009CA601 /* Default.png */; };
+		B5B3DD351BE9FFE3009CA601 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD261BE9FFE3009CA601 /* Default@2x.png */; };
+		B5B3DD361BE9FFE3009CA601 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD271BE9FFE3009CA601 /* gear.png */; };
+		B5B3DD371BE9FFE3009CA601 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD281BE9FFE3009CA601 /* gear@2x.png */; };
+		B5B3DD381BE9FFE3009CA601 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD291BE9FFE3009CA601 /* globe.png */; };
+		B5B3DD391BE9FFE3009CA601 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2A1BE9FFE3009CA601 /* globe@2x.png */; };
+		B5B3DD3A1BE9FFE3009CA601 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2B1BE9FFE3009CA601 /* profile.png */; };
+		B5B3DD3B1BE9FFE3009CA601 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2C1BE9FFE3009CA601 /* profile@2x.png */; };
+		B5B3DD3C1BE9FFE3009CA601 /* Profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2D1BE9FFE3009CA601 /* Profile_image.png */; };
+		B5B3DD3D1BE9FFE3009CA601 /* Profile_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2E1BE9FFE3009CA601 /* Profile_image@2x.png */; };
+		B5B3DD3E1BE9FFE3009CA601 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD2F1BE9FFE3009CA601 /* star.png */; };
+		B5B3DD3F1BE9FFE3009CA601 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD301BE9FFE3009CA601 /* star@2x.png */; };
 		C20146971196ECC6F6BF2F16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F92E551FDC1CC06983F8180 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -149,7 +165,6 @@
 		190130AB1BDB8EA80092C677 /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
 		190130AD1BDB8EA80092C677 /* EMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMError.h; sourceTree = "<group>"; };
 		190130AE1BDB8EA80092C677 /* EMErrorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMErrorDefs.h; sourceTree = "<group>"; };
-		190130B01BDB8EA80092C677 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		190130B31BDB8EA80092C677 /* EaseMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseMob.bundle; sourceTree = "<group>"; };
 		190130B71BDB8EE20092C677 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		190130B91BDB8EE90092C677 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -212,6 +227,24 @@
 		8890C1401BCE40AC00DDC23C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		8890C1421BCE50DF00DDC23C /* XKCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCRegisterViewController.h; sourceTree = "<group>"; };
 		8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCRegisterViewController.m; sourceTree = "<group>"; };
+		B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
+		B5B3DD1E1BE9F842009CA601 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
+		B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
+		B5B3DD221BE9FFE3009CA601 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
+		B5B3DD231BE9FFE3009CA601 /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger@2x.png"; sourceTree = "<group>"; };
+		B5B3DD241BE9FFE3009CA601 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B5B3DD251BE9FFE3009CA601 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B5B3DD261BE9FFE3009CA601 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B5B3DD271BE9FFE3009CA601 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		B5B3DD281BE9FFE3009CA601 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		B5B3DD291BE9FFE3009CA601 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		B5B3DD2A1BE9FFE3009CA601 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe@2x.png"; sourceTree = "<group>"; };
+		B5B3DD2B1BE9FFE3009CA601 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		B5B3DD2C1BE9FFE3009CA601 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		B5B3DD2D1BE9FFE3009CA601 /* Profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile_image.png; sourceTree = "<group>"; };
+		B5B3DD2E1BE9FFE3009CA601 /* Profile_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile_image@2x.png"; sourceTree = "<group>"; };
+		B5B3DD2F1BE9FFE3009CA601 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		B5B3DD301BE9FFE3009CA601 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +260,7 @@
 				190130BC1BDB8F0C0092C677 /* libsqlite3.tbd in Frameworks */,
 				190130BA1BDB8EE90092C677 /* CFNetwork.framework in Frameworks */,
 				190130B81BDB8EE20092C677 /* MobileCoreServices.framework in Frameworks */,
-				190130B41BDB8EA80092C677 /* libEaseMobClientSDK.a in Frameworks */,
+				B5B3DD1C1BE9F257009CA601 /* libEaseMobClientSDK.a in Frameworks */,
 				8890C1411BCE40AC00DDC23C /* libicucore.tbd in Frameworks */,
 				8890C13D1BCE409C00DDC23C /* libstdc++.tbd in Frameworks */,
 				8890C13B1BCE409000DDC23C /* JavaScriptCore.framework in Frameworks */,
@@ -258,8 +291,8 @@
 		190130461BDB8EA80092C677 /* EaseMobSDK */ = {
 			isa = PBXGroup;
 			children = (
+				B5B3DD1A1BE9F257009CA601 /* lib */,
 				190130471BDB8EA80092C677 /* include */,
-				190130AF1BDB8EA80092C677 /* lib */,
 				190130B21BDB8EA80092C677 /* resources */,
 			);
 			path = EaseMobSDK;
@@ -508,14 +541,6 @@
 			path = ErrorManager;
 			sourceTree = "<group>";
 		};
-		190130AF1BDB8EA80092C677 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				190130B01BDB8EA80092C677 /* libEaseMobClientSDK.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
 		190130B21BDB8EA80092C677 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +632,8 @@
 		8890C1011BCDF28E00DDC23C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B5B3DD211BE9FFE3009CA601 /* image */,
+				B5B3DD1D1BE9F842009CA601 /* 侧面菜单效果 */,
 				8890C11A1BCE37F700DDC23C /* LoginRegister */,
 				8890C1031BCDF28E00DDC23C /* Main */,
 				19B8826B1BE5DA460091C89D /* XKCWeatherStatusTool.h */,
@@ -716,6 +743,45 @@
 				8890C1231BCE382300DDC23C /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		B5B3DD1A1BE9F257009CA601 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B5B3DD1D1BE9F842009CA601 /* 侧面菜单效果 */ = {
+			isa = PBXGroup;
+			children = (
+				B5B3DD1E1BE9F842009CA601 /* RNFrostedSidebar.h */,
+				B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */,
+			);
+			path = "侧面菜单效果";
+			sourceTree = "<group>";
+		};
+		B5B3DD211BE9FFE3009CA601 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				B5B3DD221BE9FFE3009CA601 /* burger.png */,
+				B5B3DD231BE9FFE3009CA601 /* burger@2x.png */,
+				B5B3DD241BE9FFE3009CA601 /* Default-568h@2x.png */,
+				B5B3DD251BE9FFE3009CA601 /* Default.png */,
+				B5B3DD261BE9FFE3009CA601 /* Default@2x.png */,
+				B5B3DD271BE9FFE3009CA601 /* gear.png */,
+				B5B3DD281BE9FFE3009CA601 /* gear@2x.png */,
+				B5B3DD291BE9FFE3009CA601 /* globe.png */,
+				B5B3DD2A1BE9FFE3009CA601 /* globe@2x.png */,
+				B5B3DD2B1BE9FFE3009CA601 /* profile.png */,
+				B5B3DD2C1BE9FFE3009CA601 /* profile@2x.png */,
+				B5B3DD2D1BE9FFE3009CA601 /* Profile_image.png */,
+				B5B3DD2E1BE9FFE3009CA601 /* Profile_image@2x.png */,
+				B5B3DD2F1BE9FFE3009CA601 /* star.png */,
+				B5B3DD301BE9FFE3009CA601 /* star@2x.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		C1A9D7D6641F0041ACCF90DF /* Pods */ = {
@@ -836,9 +902,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8808CE631BC8FC1200C9B431 /* LaunchScreen.storyboard in Resources */,
+				B5B3DD3F1BE9FFE3009CA601 /* star@2x.png in Resources */,
+				B5B3DD391BE9FFE3009CA601 /* globe@2x.png in Resources */,
+				B5B3DD321BE9FFE3009CA601 /* burger@2x.png in Resources */,
+				B5B3DD311BE9FFE3009CA601 /* burger.png in Resources */,
+				B5B3DD351BE9FFE3009CA601 /* Default@2x.png in Resources */,
+				B5B3DD371BE9FFE3009CA601 /* gear@2x.png in Resources */,
+				B5B3DD341BE9FFE3009CA601 /* Default.png in Resources */,
+				B5B3DD3C1BE9FFE3009CA601 /* Profile_image.png in Resources */,
 				8890C1251BCE382300DDC23C /* SMS_SDKLocalizable.strings in Resources */,
+				B5B3DD361BE9FFE3009CA601 /* gear.png in Resources */,
 				190130B61BDB8EA80092C677 /* EaseMob.bundle in Resources */,
+				B5B3DD3E1BE9FFE3009CA601 /* star.png in Resources */,
+				B5B3DD381BE9FFE3009CA601 /* globe.png in Resources */,
+				B5B3DD331BE9FFE3009CA601 /* Default-568h@2x.png in Resources */,
 				8808CE601BC8FC1200C9B431 /* Assets.xcassets in Resources */,
+				B5B3DD3A1BE9FFE3009CA601 /* profile.png in Resources */,
+				B5B3DD3B1BE9FFE3009CA601 /* profile@2x.png in Resources */,
+				B5B3DD3D1BE9FFE3009CA601 /* Profile_image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,6 +989,7 @@
 				19B8826D1BE5DA460091C89D /* XKCWeatherStatusTool.m in Sources */,
 				193B92561BD2A334004669AD /* XKCAccountTool.m in Sources */,
 				8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */,
+				B5B3DD201BE9F842009CA601 /* RNFrostedSidebar.m in Sources */,
 				193B92531BD2A31B004669AD /* XKCAccount.m in Sources */,
 				8890C1141BCDF28E00DDC23C /* XKCMainCellData.m in Sources */,
 				8890C1361BCE3B2A00DDC23C /* UILabel+Extension.m in Sources */,
