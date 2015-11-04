@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     
     [self setUpViewContent]; // 布局
 }
@@ -51,6 +51,7 @@
 {
     self.view.backgroundColor = XKCBaseColor;
 }
+
 
 
 
