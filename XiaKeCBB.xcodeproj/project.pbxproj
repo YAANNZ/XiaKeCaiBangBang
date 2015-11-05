@@ -43,8 +43,8 @@
 		8890C13F1BCE40A400DDC23C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C13E1BCE40A400DDC23C /* libz.tbd */; };
 		8890C1411BCE40AC00DDC23C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C1401BCE40AC00DDC23C /* libicucore.tbd */; };
 		8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */; };
+		B537B8011BEAE65300FD9737 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = B537B8001BEAE65300FD9737 /* RNFrostedSidebar.m */; };
 		B5B3DD1C1BE9F257009CA601 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */; };
-		B5B3DD201BE9F842009CA601 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */; };
 		B5B3DD311BE9FFE3009CA601 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD221BE9FFE3009CA601 /* burger.png */; };
 		B5B3DD321BE9FFE3009CA601 /* burger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD231BE9FFE3009CA601 /* burger@2x.png */; };
 		B5B3DD331BE9FFE3009CA601 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B3DD241BE9FFE3009CA601 /* Default-568h@2x.png */; };
@@ -227,9 +227,9 @@
 		8890C1401BCE40AC00DDC23C /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		8890C1421BCE50DF00DDC23C /* XKCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCRegisterViewController.h; sourceTree = "<group>"; };
 		8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCRegisterViewController.m; sourceTree = "<group>"; };
+		B537B7FF1BEAE65300FD9737 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
+		B537B8001BEAE65300FD9737 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
 		B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
-		B5B3DD1E1BE9F842009CA601 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
-		B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
 		B5B3DD221BE9FFE3009CA601 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		B5B3DD231BE9FFE3009CA601 /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger@2x.png"; sourceTree = "<group>"; };
 		B5B3DD241BE9FFE3009CA601 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -632,8 +632,8 @@
 		8890C1011BCDF28E00DDC23C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B537B7FE1BEAE65300FD9737 /* RNFrostedSidebar */,
 				B5B3DD211BE9FFE3009CA601 /* image */,
-				B5B3DD1D1BE9F842009CA601 /* 侧面菜单效果 */,
 				8890C11A1BCE37F700DDC23C /* LoginRegister */,
 				8890C1031BCDF28E00DDC23C /* Main */,
 				19B8826B1BE5DA460091C89D /* XKCWeatherStatusTool.h */,
@@ -745,21 +745,21 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
+		B537B7FE1BEAE65300FD9737 /* RNFrostedSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				B537B7FF1BEAE65300FD9737 /* RNFrostedSidebar.h */,
+				B537B8001BEAE65300FD9737 /* RNFrostedSidebar.m */,
+			);
+			path = RNFrostedSidebar;
+			sourceTree = "<group>";
+		};
 		B5B3DD1A1BE9F257009CA601 /* lib */ = {
 			isa = PBXGroup;
 			children = (
 				B5B3DD1B1BE9F257009CA601 /* libEaseMobClientSDK.a */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		B5B3DD1D1BE9F842009CA601 /* 侧面菜单效果 */ = {
-			isa = PBXGroup;
-			children = (
-				B5B3DD1E1BE9F842009CA601 /* RNFrostedSidebar.h */,
-				B5B3DD1F1BE9F842009CA601 /* RNFrostedSidebar.m */,
-			);
-			path = "侧面菜单效果";
 			sourceTree = "<group>";
 		};
 		B5B3DD211BE9FFE3009CA601 /* image */ = {
@@ -989,7 +989,7 @@
 				19B8826D1BE5DA460091C89D /* XKCWeatherStatusTool.m in Sources */,
 				193B92561BD2A334004669AD /* XKCAccountTool.m in Sources */,
 				8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */,
-				B5B3DD201BE9F842009CA601 /* RNFrostedSidebar.m in Sources */,
+				B537B8011BEAE65300FD9737 /* RNFrostedSidebar.m in Sources */,
 				193B92531BD2A31B004669AD /* XKCAccount.m in Sources */,
 				8890C1141BCDF28E00DDC23C /* XKCMainCellData.m in Sources */,
 				8890C1361BCE3B2A00DDC23C /* UILabel+Extension.m in Sources */,
