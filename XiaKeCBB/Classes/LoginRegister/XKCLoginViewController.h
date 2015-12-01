@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class XKCLoginViewController;
 
+@protocol XKCLoginViewControllerDelegate <NSObject>
+@optional
+- (void)loginViewController:(XKCLoginViewController *)loginViewController loginSuccessWithUsername:(NSString *)username password:(NSString *)password;
+@end
 
 @interface XKCLoginViewController : UIViewController
+
+@property (nonatomic, weak) id<XKCLoginViewControllerDelegate> delegate;
 
 @end

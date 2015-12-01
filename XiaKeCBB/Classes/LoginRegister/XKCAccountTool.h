@@ -22,4 +22,6 @@
  */
 + (XKCAccount *)account;
 
++ (BOOL)isMobileNumber:(NSString *)mobileNum;
+
 @end

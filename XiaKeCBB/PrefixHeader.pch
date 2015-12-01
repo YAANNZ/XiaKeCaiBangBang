@@ -14,14 +14,22 @@
 #import "UIView+Extension.h"
 #import "UIColor+Extension.h"
 #import "UIImage+Extension.h"
+#import "UIBarButtonItem+Extension.h"
 #import "EaseMob.h"
+#import "MJExtension.h"
+#import "XKCHttpTool.h"
+#import <BmobSDK/Bmob.h>
+#import "MBProgressHUD.h"
+
+// 环信
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 #define XKCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define XKCRandomColor XKCColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
 #define XKCBaseColor XKCColor(48, 49, 57)  /** 默认颜色 灰黑色*/
 
 #define XKCNavBarHeight 64
-#define XKCTabBarHeight 49
+#define XKCTabBarHeight 44
 #define MAINSCREEN_FRAME   [[UIScreen mainScreen] bounds]  //设备屏幕大小
 #define MAINSCREEN_WIDTH   MAINSCREEN_FRAME.size.width  //设备屏幕宽
 #define MAINSCREEN_HEIGHT  MAINSCREEN_FRAME.size.height  //设备屏幕高
