@@ -63,6 +63,7 @@
 		8890C1411BCE40AC00DDC23C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C1401BCE40AC00DDC23C /* libicucore.tbd */; };
 		8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */; };
 		88A530421BF35D02005D2B1B /* XKCChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A530411BF35D02005D2B1B /* XKCChatDetailViewController.m */; };
+		88FCA8B61C0E90F00028191A /* XKCArgotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FCA8B51C0E90F00028191A /* XKCArgotModel.m */; };
 		88FDA8EA1BEC86A80060FCC1 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA8E91BEC86A80060FCC1 /* RNFrostedSidebar.m */; };
 		88FDA8FD1BEC86CF0060FCC1 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA8ED1BEC86CF0060FCC1 /* MJConst.m */; };
 		88FDA8FE1BEC86CF0060FCC1 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA8F01BEC86CF0060FCC1 /* MJFoundation.m */; };
@@ -294,6 +295,8 @@
 		88A530381BF347B2005D2B1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88A530401BF35D02005D2B1B /* XKCChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCChatDetailViewController.h; sourceTree = "<group>"; };
 		88A530411BF35D02005D2B1B /* XKCChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCChatDetailViewController.m; sourceTree = "<group>"; };
+		88FCA8B41C0E90F00028191A /* XKCArgotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XKCArgotModel.h; path = XiaKeCBB/Classes/Argot/XKCArgotModel.h; sourceTree = SOURCE_ROOT; };
+		88FCA8B51C0E90F00028191A /* XKCArgotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XKCArgotModel.m; path = XiaKeCBB/Classes/Argot/XKCArgotModel.m; sourceTree = SOURCE_ROOT; };
 		88FDA8E81BEC86A80060FCC1 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
 		88FDA8E91BEC86A80060FCC1 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
 		88FDA8EC1BEC86CF0060FCC1 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -797,6 +800,8 @@
 			children = (
 				8800A2C41C04373700647481 /* XKCArgotViewController.h */,
 				8800A2C51C04373700647481 /* XKCArgotViewController.m */,
+				88FCA8B41C0E90F00028191A /* XKCArgotModel.h */,
+				88FCA8B51C0E90F00028191A /* XKCArgotModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1324,6 +1329,7 @@
 				1935A8A31BEE32130071FEE8 /* MBProgressHUD.m in Sources */,
 				8890C1371BCE3B2A00DDC23C /* UIWindow+Extension.m in Sources */,
 				88FDA91C1BEC87DE0060FCC1 /* XKCWeatherStatusSk.m in Sources */,
+				88FCA8B61C0E90F00028191A /* XKCArgotModel.m in Sources */,
 				88FDA9351BEC8E8F0060FCC1 /* FMResultSet.m in Sources */,
 				88FDA9311BEC8E8F0060FCC1 /* FMDatabase.m in Sources */,
 				88FDA8EA1BEC86A80060FCC1 /* RNFrostedSidebar.m in Sources */,
