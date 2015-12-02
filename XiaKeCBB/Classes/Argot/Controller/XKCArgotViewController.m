@@ -32,14 +32,16 @@
 - (void)setupSubviews
 {
     NSInteger margin = 20;
+//    NSInteger answerLW = 40;
+//    NSInteger answerLH = self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin;
+//    NSInteger answerLX = self.view.width - answerTW - margin;
+//    NSInteger answerLY = margin + XKCNavBarHeight;
     UILabel *answerL = [[UILabel alloc] init];
     answerL.text = @"我们的口号是";
     answerL.textColor = XKCBaseColor;
     answerL.font = [UIFont systemFontOfSize:18];
-    answerL.textAlignment = NSTextAlignmentCenter;
-    answerL.size = [answerL boundingRectWithSize:CGSizeMake(30, (self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin)/2)];
-    answerL.width += 5;
-    answerL.height += 10;
+    answerL.width = 30;
+    answerL.size = [answerL boundingRectWithSize:CGSizeMake(answerL.width, (self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin)/2)];
     answerL.x = self.view.width - answerL.width - margin;
     answerL.y = margin + XKCNavBarHeight;
     answerL.layer.cornerRadius = answerL.width/2;
