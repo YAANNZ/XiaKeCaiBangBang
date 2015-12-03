@@ -34,19 +34,36 @@
 
 - (void)setupSubviews
 {
+    // 1、准备数据
     NSInteger margin = 20;
     NSInteger widthMargin = 5;
     NSInteger heightMargin = 10;
     NSInteger fontNum = 18;
     NSInteger borderWidth = 2;
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:fontNum]};
+    CGSize contentMaxSize = CGSizeMake(30, self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin);
+    // 计算宽高
+    for (XKCArgotModel *dataModel in self.dataArray)
+    {
+        CGSize queSize = [dataModel.question boundingRectWithSize:contentMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+        dataModel.queLableW = queSize.width;
+        dataModel.queLableH = queSize.height;
+        
+        CGSize ansSize = [dataModel.answer boundingRectWithSize:contentMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+        dataModel.answerLableW = ansSize.width;
+        dataModel.answerLableH = ansSize.height;
+    }
+    
+    // 2、创建问题和答案控件
+#warning goto 计算问题和答案的长度是否超出显示范围
     UILabel *questionL = [[UILabel alloc] init];
-    questionL.text = @"我们的口号是，";
+    questionL.numberOfLines = 0;
+    questionL.text = self.qusAndAnswer.question;
     questionL.textColor = XKCBaseColor;
     questionL.font = [UIFont systemFontOfSize:fontNum];
     questionL.textAlignment = NSTextAlignmentCenter;
-    questionL.size = [questionL boundingRectWithSize:CGSizeMake(30, (self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin)/2)];
-    questionL.width += widthMargin;
-    questionL.height += heightMargin;
+    questionL.width = self.qusAndAnswer.queLableW + widthMargin;
+    questionL.height = self.qusAndAnswer.queLableH + heightMargin;
     questionL.x = self.view.width - questionL.width - margin;
     questionL.y = margin + XKCNavBarHeight;
     questionL.layer.cornerRadius = questionL.width/2;
@@ -64,24 +81,59 @@
     self.answerL = answerL;
     [self.view addSubview:answerL];
     
-    UILabel *optionL = [[UILabel alloc] init];
-    optionL.text = @"没有蛀牙！";
-    optionL.textColor = XKCBaseColor;
-    optionL.font = [UIFont systemFontOfSize:fontNum];
-    optionL.textAlignment = NSTextAlignmentCenter;
-    optionL.size = [optionL boundingRectWithSize:CGSizeMake(30, self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin)];
-    optionL.width += widthMargin;
-    optionL.height += heightMargin;
-    optionL.x = margin;
-    optionL.y = margin + XKCNavBarHeight;
-    optionL.layer.cornerRadius = answerL.width/2;
-    optionL.layer.masksToBounds = YES;
-    optionL.backgroundColor = [UIColor orangeColor];
-    optionL.userInteractionEnabled = YES;
-    [self.view addSubview:optionL];
-    UIGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-    [optionL addGestureRecognizer:panGes];
+    // 3、创建答案选项控件
+    NSInteger columnIndex = 0;
+    NSInteger remainderH = (NSInteger)(self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin);
+    for (XKCArgotModel *dataModel in self.dataArray)
+    {
+        // 判断是否还有空间
+        if((margin + (columnIndex + 1) * (margin/2 + dataModel.answerLableW + widthMargin) + dataModel.answerLableW + widthMargin + margin) > self.view.width)
+        {
+            break;
+        }
+        UILabel *optionL = [[UILabel alloc] init];
+        optionL.width = dataModel.answerLableW + widthMargin;
+        optionL.height = dataModel.answerLableH + heightMargin;
+        if ((remainderH == (NSInteger)(self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin)) && (columnIndex == 0))
+        {
+            optionL.x = margin;
+            optionL.y = margin + XKCNavBarHeight;
+            remainderH = remainderH - optionL.height - margin/2;
+        }
+        else
+        {
+            if(remainderH < (NSInteger)(self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin))
+            {
+                if (optionL.height <= remainderH)
+                {
+                    optionL.x = margin + columnIndex * (margin/2 + optionL.width);
+                    optionL.y = self.view.height - (remainderH + margin + XKCTabBarHeight);
+                    remainderH = remainderH - optionL.height - margin/2;
+                }
+                else
+                {
+                    columnIndex++;
+                    optionL.x = margin + columnIndex * (margin/2 + optionL.width);
+                    optionL.y = margin + XKCNavBarHeight;
+                    remainderH = (NSInteger)(self.view.height - XKCTabBarHeight - XKCNavBarHeight - 2*margin - optionL.height -margin/2);
+                }
+            }
+        }
+        optionL.numberOfLines = 0;
+        optionL.text = dataModel.answer;
+        optionL.textColor = XKCBaseColor;
+        optionL.font = [UIFont systemFontOfSize:fontNum];
+        optionL.textAlignment = NSTextAlignmentCenter;
+        optionL.layer.cornerRadius = answerL.width/2;
+        optionL.layer.masksToBounds = YES;
+        optionL.backgroundColor = [UIColor orangeColor];
+        optionL.userInteractionEnabled = YES;
+        [self.view addSubview:optionL];
+        UIGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        [optionL addGestureRecognizer:panGes];
+    }
 }
+
 
 - (void)handleGesture:(UIPanGestureRecognizer *)gesture
 {
@@ -92,7 +144,6 @@
 
             break;
         case UIGestureRecognizerStateChanged: {
-            XKCLog(@"%f",translation.y);
             selLable.transform = CGAffineTransformIdentity;
             selLable.transform = CGAffineTransformTranslate(selLable.transform, translation.x, translation.y);
             break;
@@ -100,11 +151,10 @@
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled: {
             // 判断位置
-            XKCLog(@"%@",NSStringFromCGRect(selLable.frame));
             if (selLable.x > self.answerL.x - self.answerL.width)
             {
                 // 判断答案
-                if ([selLable.text isEqualToString:@"没有蛀牙！"])
+                if ([selLable.text isEqualToString:self.qusAndAnswer.answer])
                 {
                     [UIView animateWithDuration:1.0 animations:^{
                         selLable.x = self.answerL.x + 2;
@@ -113,6 +163,10 @@
                     [UIView animateWithDuration:2.0 animations:^{
                         self.answerL.height = selLable.height + 4;
                     }];
+                }
+                else
+                {
+                    selLable.transform = CGAffineTransformIdentity;
                 }
             }
             else
@@ -126,7 +180,7 @@
     }
 }
 
-
+#pragma mark - 懒加载
 - (NSMutableArray *)dataArray
 {
     if (_dataArray == nil)
@@ -160,19 +214,30 @@
                           @"answer": @"是非在乎实力。"
                           },
                         @{
-                          @"question": @"Talk is cheap.",
-                          @"answer": @"Show me the code."
+                          @"question": @"侠骨千年寻不见，",
+                          @"answer": @"碧血红叶醉秋风。"
                           },
                         @{
                           @"question": @"人生在世，追求的是希望，",
                           @"answer": @"但是得到的只有回忆。"
+                          },
+                        @{
+                          @"question": @"人就是江湖，",
+                          @"answer": @"你怎么退出？"
                           }];
         _dataArray = [XKCArgotModel objectArrayWithKeyValuesArray:array];
     }
     return _dataArray;
 }
 
-
+- (XKCArgotModel *)qusAndAnswer
+{
+    if (_qusAndAnswer == nil)
+    {
+        _qusAndAnswer = self.dataArray[arc4random_uniform((int)self.dataArray.count)]; // 随机获取提问用问题
+    }
+    return _qusAndAnswer;
+}
 
 //一、
 //二、有人就有恩怨，有恩怨就有江湖。人就是江湖，你怎么退出？
