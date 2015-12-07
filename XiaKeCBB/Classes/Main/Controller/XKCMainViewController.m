@@ -12,7 +12,6 @@
 #import "XKCAccountTool.h"
 #import "XKCChatViewController.h"
 #import "Reachability.h"
-#import <LocalAuthentication/LocalAuthentication.h>
 #import "XKCWeatherViewController.h"
 
 @interface XKCMainViewController () <UITableViewDataSource, UITableViewDelegate, XKCLoginViewControllerDelegate, UIDynamicAnimatorDelegate>
@@ -247,39 +246,6 @@
 #pragma mark - 按钮点击事件
 - (void)getAddressBook:(UIButton *)getBtn
 {
-//    LAContext *context = [LAContext new];
-//    NSError *error;
-//    context.localizedFallbackTitle = @"侠客菜帮帮";
-//    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
-//    {
-//        NSLog(@"Touch ID is available.");
-//        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-//                localizedReason:NSLocalizedString(@"解除封印吧，少侠！", nil)
-//                          reply:^(BOOL success, NSError *error) {
-//                              if (success)
-//                              {
-//                                  NSLog(@"Authenticated using Touch ID.");
-//                              }
-//                              else
-//                              {
-//                                  if (error.code == kLAErrorUserFallback)
-//                                  {
-//                                      NSLog(@"User tapped Enter Password");
-//                                  } else if (error.code == kLAErrorUserCancel) {
-//                                      NSLog(@"User tapped Cancel");
-//                                  } else {
-//                                      NSLog(@"Authenticated failed.");
-//                                  }
-//                              }
-//                          }
-//         ];
-//    }
-//    else
-//    {
-//        NSLog(@"Touch ID is not available: %@", error);
-//    }
-    
-    
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"AddressBook"];
     
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {

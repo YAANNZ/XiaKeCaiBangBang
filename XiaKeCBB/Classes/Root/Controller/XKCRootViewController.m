@@ -16,13 +16,16 @@
 #import "XKCDismissAnimation.h"
 #import "XKCInteractiveTransition.h"
 #import "XKCCustomView.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
-@interface XKCRootViewController () <XKCRootBottomViewDelegate, UIViewControllerTransitioningDelegate>
+@interface XKCRootViewController () <XKCRootBottomViewDelegate, UIViewControllerTransitioningDelegate, XKCArgotViewControllerDelegate>
 
-@property (nonatomic,weak) UIView *bottomView;
+@property (nonatomic,weak) XKCRootBottomView *bottomView;
 @property (nonatomic, strong) XKCPresentAnimation *presentAnimation;
 @property (nonatomic, strong) XKCDismissAnimation *dismissAnimation;
 @property (nonatomic, strong) XKCInteractiveTransition *interactiveTransition;
+@property (nonatomic, weak) XKCArgotViewController *argotVC;
+//@property (nonatomic, assign) BOOL couldDis;
 
 @end
 
@@ -33,7 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"侠客菜帮帮";
+    self.title = NSLocalizedString(@"侠客菜帮帮", @"123");
+    
     /** 设置导航栏背景颜色，字体，状态栏颜色 */
     NSDictionary *navAttrDict = @{
                                   NSForegroundColorAttributeName : [UIColor orangeColor]
@@ -45,6 +49,8 @@
     
     // 添加子控制器
     XKCArgotViewController *argotVC = [[XKCArgotViewController alloc] init];
+    argotVC.delegate = self;
+    self.argotVC = argotVC;
     [self addChildViewController:argotVC];
     XKCMainViewController *mainVC = [[XKCMainViewController alloc] init];
     [self addChildViewController:mainVC];
@@ -60,9 +66,23 @@
     bottomView.delegate = self;
     [self.view addSubview:bottomView];
     
+    // 添加nav右侧item
+    UIButton *nextItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    nextItem.frame = CGRectMake(0, 0, 40, 20);
+    nextItem.layer.cornerRadius = 5;
+    [nextItem setTitle:@"next" forState:UIControlStateNormal];
+    [nextItem setBackgroundColor:[UIColor orangeColor]];
+    [nextItem addTarget:self action:@selector(nextQuestion) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextItem];
+    
     // 摇一摇
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;
     [self resignFirstResponder];
+}
+
+- (void)nextQuestion
+{
+    [self.argotVC nextQuestion];
 }
 
 #pragma mark - XKCRootBottomViewDelegate方法
@@ -91,6 +111,7 @@
         if (self.view.subviews[0].x)
         {
             [UIView animateWithDuration:1.0 animations:^{
+                self.navigationItem.rightBarButtonItem.customView.alpha = 1;
                 self.view.subviews[0].x = 0;
                 self.view.subviews[1].x = self.view.width;
             }];
@@ -99,17 +120,60 @@
     else
     {
         XKCLog(@"帮会大厅");
-        // 显示XKCMainViewController
-        if (self.view.subviews[1].x)
+        LAContext *context = [LAContext new];
+        NSError *error;
+        context.localizedFallbackTitle = @"侠客菜帮帮";
+        if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
         {
-            [UIView animateWithDuration:1.0 animations:^{
-                self.view.subviews[1].x = 0;
-                self.view.subviews[0].x = -self.view.width;
-            }];
+            NSLog(@"Touch ID is available.");
+            [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                    localizedReason:NSLocalizedString(@"开启符文吧，少侠！", nil)
+                              reply:^(BOOL success, NSError *error) {
+                                  if (success)
+                                  {
+                                      [UIView animateWithDuration:1.0 animations:^{
+                                          self.view.subviews[1].x = 0;
+                                          self.view.subviews[0].x = -self.view.width;
+                                          self.navigationItem.rightBarButtonItem.customView.alpha = 0;
+                                      }completion:^(BOOL finished) {
+                                          self.argotVC.answerL.height = self.argotVC.answerLH;
+                                          self.argotVC.selAnswerL.origin = self.argotVC.corAnswerLOrigin;
+                                      }];
+                                  }
+                                  else
+                                  {
+                                      if (error.code == kLAErrorUserFallback)
+                                      {
+                                          NSLog(@"User tapped Enter Password");
+                                      } else if (error.code == kLAErrorUserCancel) {
+                                          NSLog(@"User tapped Cancel");
+                                      } else {
+                                          NSLog(@"Authenticated failed.");
+                                      }
+                                  }
+                              }
+             ];
+        }
+        else
+        {
+            NSLog(@"Touch ID is not available: %@", error);
         }
     }
 }
 
+#pragma - mark  XKCArgotViewControllerDelegate
+- (void)argotViewControllerDismissWithCorrectAnswer:(UIViewController *)VC
+{
+    [self.bottomView.sgControl setSelectedSegmentIndex:1];
+    [UIView animateWithDuration:1.0 animations:^{
+        self.view.subviews[1].x = 0;
+        self.view.subviews[0].x = -self.view.width;
+        self.navigationItem.rightBarButtonItem.customView.alpha = 0;
+    }completion:^(BOOL finished) {
+        self.argotVC.answerL.height = self.argotVC.answerLH;
+        self.argotVC.selAnswerL.origin = self.argotVC.corAnswerLOrigin;
+    }];
+}
 
 #pragma - mark  UIViewControllerTransitioningDelegate
 // modal 时调用此方法

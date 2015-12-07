@@ -13,9 +13,9 @@
 @interface XKCArgotViewController ()
 
 @property (nonatomic, weak) UILabel *questionL;
-@property (nonatomic, weak) UILabel *answerL;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) XKCArgotModel *qusAndAnswer;
+
 
 @end
 
@@ -29,7 +29,6 @@
     self.view.backgroundColor = XKCBaseColor;
     
     [self setupSubviews];
-    
 }
 
 - (void)setupSubviews
@@ -141,7 +140,9 @@
     CGPoint translation = [gesture translationInView:selLable.superview];
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
-
+            self.selAnswerL = selLable;
+            self.corAnswerLOrigin = selLable.origin;
+            self.answerLH = self.answerL.height;
             break;
         case UIGestureRecognizerStateChanged: {
             selLable.transform = CGAffineTransformIdentity;
@@ -157,11 +158,19 @@
                 if ([selLable.text isEqualToString:self.qusAndAnswer.answer])
                 {
                     [UIView animateWithDuration:1.0 animations:^{
+                        selLable.transform = CGAffineTransformIdentity;
                         selLable.x = self.answerL.x + 2;
                         selLable.y = self.answerL.y + 2;
                     }];
                     [UIView animateWithDuration:2.0 animations:^{
                         self.answerL.height = selLable.height + 4;
+                    }completion:^(BOOL finished) {
+                        selLable.transform = CGAffineTransformIdentity;
+                        // 切换主屏幕
+                        if([self.delegate respondsToSelector:@selector(argotViewControllerDismissWithCorrectAnswer:)])
+                        {
+                            [self.delegate argotViewControllerDismissWithCorrectAnswer:self];
+                        }
                     }];
                 }
                 else
@@ -179,6 +188,20 @@
             break;
     }
 }
+
+- (void)nextQuestion
+{
+    XKCArgotModel *newQusAndAnswer = self.dataArray[arc4random_uniform((int)self.dataArray.count)];
+    self.questionL.text = newQusAndAnswer.question;
+    [UIView animateWithDuration:1.0 animations:^{
+        self.questionL.height += newQusAndAnswer.queLableH - self.qusAndAnswer.queLableH;
+        self.answerL.height -= newQusAndAnswer.queLableH - self.qusAndAnswer.queLableH;
+        self.answerL.y += newQusAndAnswer.queLableH - self.qusAndAnswer.queLableH;
+    }];
+    self.qusAndAnswer = newQusAndAnswer;
+    
+}
+
 
 #pragma mark - 懒加载
 - (NSMutableArray *)dataArray

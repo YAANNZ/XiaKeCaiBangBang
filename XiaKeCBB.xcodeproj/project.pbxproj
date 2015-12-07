@@ -63,6 +63,7 @@
 		8890C1411BCE40AC00DDC23C /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8890C1401BCE40AC00DDC23C /* libicucore.tbd */; };
 		8890C1441BCE50DF00DDC23C /* XKCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8890C1431BCE50DF00DDC23C /* XKCRegisterViewController.m */; };
 		88A530421BF35D02005D2B1B /* XKCChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A530411BF35D02005D2B1B /* XKCChatDetailViewController.m */; };
+		88B913971C1555E9001B5C64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88B913991C1555E9001B5C64 /* Localizable.strings */; };
 		88FCA8B61C0E90F00028191A /* XKCArgotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FCA8B51C0E90F00028191A /* XKCArgotModel.m */; };
 		88FDA8EA1BEC86A80060FCC1 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA8E91BEC86A80060FCC1 /* RNFrostedSidebar.m */; };
 		88FDA8FD1BEC86CF0060FCC1 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA8ED1BEC86CF0060FCC1 /* MJConst.m */; };
@@ -295,6 +296,8 @@
 		88A530381BF347B2005D2B1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88A530401BF35D02005D2B1B /* XKCChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCChatDetailViewController.h; sourceTree = "<group>"; };
 		88A530411BF35D02005D2B1B /* XKCChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCChatDetailViewController.m; sourceTree = "<group>"; };
+		88B9139C1C155635001B5C64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88B9139D1C155638001B5C64 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		88FCA8B41C0E90F00028191A /* XKCArgotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XKCArgotModel.h; path = XiaKeCBB/Classes/Argot/XKCArgotModel.h; sourceTree = SOURCE_ROOT; };
 		88FCA8B51C0E90F00028191A /* XKCArgotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XKCArgotModel.m; path = XiaKeCBB/Classes/Argot/XKCArgotModel.m; sourceTree = SOURCE_ROOT; };
 		88FDA8E81BEC86A80060FCC1 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
@@ -843,6 +846,7 @@
 			isa = PBXGroup;
 			children = (
 				8890C1281BCE390100DDC23C /* PrefixHeader.pch */,
+				88B913991C1555E9001B5C64 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1235,6 +1239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				190130B61BDB8EA80092C677 /* EaseMob.bundle in Resources */,
+				88B913971C1555E9001B5C64 /* Localizable.strings in Resources */,
 				19DDE9031BF8C20900161450 /* SMS_SDKLocalizable.strings in Resources */,
 				8808CE601BC8FC1200C9B431 /* Assets.xcassets in Resources */,
 			);
@@ -1394,6 +1399,15 @@
 				19DDE9021BF8C20900161450 /* zh-Hans */,
 			);
 			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		88B913991C1555E9001B5C64 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88B9139C1C155635001B5C64 /* en */,
+				88B9139D1C155638001B5C64 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

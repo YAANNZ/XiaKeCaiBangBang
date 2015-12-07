@@ -18,4 +18,5 @@
 
 @interface XKCRootBottomView : UIView
 @property (nonatomic, weak) id <XKCRootBottomViewDelegate> delegate;
+@property (nonatomic, weak) UISegmentedControl *sgControl;
 @end

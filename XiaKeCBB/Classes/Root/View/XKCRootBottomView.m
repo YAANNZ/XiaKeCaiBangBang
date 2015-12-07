@@ -12,7 +12,6 @@
 
 @property (nonatomic,weak) UIButton *menuBtn;
 @property (nonatomic,weak) UIButton *settingBtn;
-@property (nonatomic, weak) UISegmentedControl *sgControl;
 
 @end
 
